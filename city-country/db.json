@@ -1,0 +1,35 @@
+{
+
+    
+    "country" : [
+        {
+            "country_name":"India"
+        },
+        {
+            "country_name" : "USA"
+        }
+    ],
+
+    "cities" : [
+        {
+            "id" : "1",
+            "country" : "India",
+            "city_name": "Bangalore",
+            "population" : "19000000"
+        },
+        {
+            "id" : "2",
+            "country" : "India",
+            "city_name": "Mumbai",
+            "population" : "29000000"
+        },
+        {
+            "id" : "3",
+            "country" : "India",
+            "city_name": "Chennai",
+            "population" : "1900000"
+        }
+    ]
+
+
+}
