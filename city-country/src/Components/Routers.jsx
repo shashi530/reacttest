@@ -9,12 +9,11 @@ export default function Routers() {
   return (
     <div>
         <NavBar/>
-      <Routes>
-      <Route path={"/"} element={<Home />}/>
-        <Route path={"/addcity"} element={<AddCity />}/>
-        <Route path={"/addcountry"} element={<AddCountry/>}/>
-      </Routes>
-
+        <Routes>
+            <Route path={"/"} element={<Home />}/>
+            <Route path={"/addcity"} element={<AddCity />}/>
+            <Route path={"/addcountry"} element={<AddCountry/>}/>
+        </Routes>
     </div>
   )
 }

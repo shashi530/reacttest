@@ -1,6 +1,4 @@
-{
-
-    
+{    
     "country" : [
         {
             "country_name":"India"
@@ -30,6 +28,4 @@
             "population" : "1900000"
         }
     ]
-
-
 }

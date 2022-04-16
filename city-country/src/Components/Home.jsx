@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {
+    Text, Table,  Thead,
+    Tbody, Tr, Th, Td, Button,
+} from '@chakra-ui/react'
 
 
 export default function Home() {
@@ -11,43 +15,49 @@ export default function Home() {
 
     const getData = async (data) => {
         const res = await axios.get('http://localhost:8080/cities');
-        setCity(res.data[0]);
+        setCity([...res.data]);
     }
-    // console.log(city.data)
+    console.log(city);
 
   return (
     <div>
-      <h1>Home</h1>
+      <Text>Home</Text>
       
-      <table border="1px solid black">
-          <thead>
-              <tr>
-                  <td>id</td>
-                  <td>Country</td>
-                  <td>City</td>
-                  <td>Population</td>
-                  <td>Edit</td>
-                  <td>Delete</td>
-              </tr>
-          </thead>
+      <Table border="1px solid black">
+          <Thead>
+              <Tr>
+                  <Th>id</Th>
+                  <Th>Country</Th>
+                  <Th>City</Th>
+                  <Th>Population</Th>
+                  <Th>Edit</Th>
+                  <Th>Delete</Th>
+              </Tr>
+          </Thead>
 
-          <tbody>
-              <tr>
-                <td>{city.id}</td>
-                <td>{city.country}</td>
-                <td>{city.city_name}</td>
-                <td>{city.population}</td>
-                <td>
+          <Tbody>
+            {
+              city.map(e =>{
+              return (
+              <Tr key={e.id}>
+                <Td>{e.id}</Td>
+                <Td>{e.country}</Td>
+                <Td>{e.city_name}</Td>
+                <Td>{e.population}</Td>
+                <Td>
 
-                <button>Edit</button>
-                </td>
-                <td>
+                <Button>Edit</Button>
+                </Td>
+                <Td>
 
-                <button>Delete</button>
-                </td>
-              </tr>
-          </tbody>
-      </table>
+                <Button>Delete</Button>
+                </Td>
+              </Tr>
+               )
+              })
+            } 
+          </Tbody>
+      </Table>
       
 
     </div>
